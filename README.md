@@ -1,78 +1,63 @@
-# Vid2DensePose
-<a target="_blank" href="https://colab.research.google.com/drive/1x77dESn7EGPCqjKdQ1sJJhNu0Cf-5Gpt?usp=sharing">
-  <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/>
-</a>
+# VID2DENSEPOSE for Win
 
-![](https://github.com/Flode-Labs/vid2densepose/blob/main/sample_videos/side_by_side.gif)
+## Introduction
 
-## Overview
+This is Windows model of Magic Vid2DensePose using Gradio.
 
-The Vid2DensePose is a powerful tool designed for applying the DensePose model to videos, generating detailed "Part Index" visualizations for each frame. This tool is exceptionally useful for enhancing animations, particularly when used in conjunction with MagicAnimate for temporally consistent human image animation.
+Original: [Vid2DensePose](https://github.com/Flode-Labs/vid2densepose)
 
-## Key Features
+### Dependencies
 
+- OS: Windows
+- nvidia:
+  - cuda: 11.7
+- python 3.10.5 (using Pyenv)
 
-- **Enhanced Output**: Produces video files showcasing DensePosedata in a vivid, color-coded format.
-- **MagicAnimate Integration**: Seamlessly compatible with MagicAnimate to foster advanced human animation projects.
+## Install
 
-## Prerequisites
+## Clone from GitHub
 
-To utilize this tool, ensure the installation of:
-- Python 3.8 or later
-- PyTorch (preferably with CUDA for GPU support)
-- Detectron2
+Clone from GitHub, and move to the folder " AnimateDiff-for-Win".
 
-## Installation Steps
-
-1. Clone the repository:
-    ```bash
-    git clone https://github.com/Flode-Labs/vid2densepose.git
-    cd vid2densepose
-    ```
-
-2. Install necessary Python packages:
-    ```bash
-    pip install -r requirements.txt
-    ```
-
-3. Clone the Detectron repository:
-    ```bash
-    git clone https://github.com/facebookresearch/detectron2.git
-    ```
-
-## Usage Guide
-
-Run the script:
-    
 ```bash
-python main.py -i sample_videos/input_video.mp4 -o sample_videos/output_video.mp4
+git clone supplepentan/vid2densepose_for_win_gradio
+cd vid2densepose_for_win_gradio
 ```
 
-The script processes the input video and generates an output with the densePose format.
+## Virtual environment
 
-####  Gradio version
-You can also use the Gradio to run the script with an interface. To do so, run the following command:
+Virtual environment with Python-version 3.10.5 using Pyenv.
+
+```bash
+pyenv local 3.10.5
+python -m venv venv
+venv/scripts/activate
+```
+
+## Libraries
+
+Install libraries using " reqruirements.txt "
+
+```bash
+python -m pip install -r requirements.txt
+```
+
+### Pytorch
+
+Uninstall unnecessary installed Pytorch, and newly install Pytorch (CUDA11.7 compatible model).
+
+```bash
+python -m pip install torch torchvision --index-url https://download.pytorch.org/whl/cu117
+```
+
+## Run the Gradio
+
 ```bash
 python app.py
 ```
 
-## Integration with MagicAnimate
+Access to http://127.0.0.1:7860 .
 
-For integration with MagicAnimate:
+## Acknowledgements
 
-1. Create the densepose video using the steps outlined above.
-2. Use this output as an input to MagicAnimate for generating temporally consistent animations.
-
-
-## Acknowledgments
-
-Special thanks to:
-- Facebook AI Research (FAIR) for the development of DensePose.
-- The contributors of the Detectron2 project.
-- [Gonzalo Vidal](https://www.tiktok.com/@_gonzavidal) for the sample videos.
-- [Sylvain Filoni](https://twitter.com/fffiloni) for the deployment of the Gradio Space in [Hugging Face](https://huggingface.co/spaces/fffiloni/video2densepose).
-
-## Support
-
-For any inquiries or support, please file an issue in our GitHub repository's issue tracker.
-
+This code is built on [Vid2DensePose](https://github.com/Flode-Labs/vid2densepose), thank for the authors for sharing their codes.
