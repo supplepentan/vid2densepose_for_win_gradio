@@ -1,3 +1,6 @@
 detectron2/
 .DS_Store
 sample_videos/.DS_Store
+
+usage.txt
+venv/
